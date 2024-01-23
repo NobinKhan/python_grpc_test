@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "python-grpc-test"
+version = "0.1.0"
+description = ""
+authors = ["nobinkhan <nazrulkhan.dk@gmail.com>"]
+packages = [{include = "scripts"}]
+
+[tool.poetry.scripts]
+server = "scripts.server:main"
+client = "scripts.client:main"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+grpcio-tools = "^1.60.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
