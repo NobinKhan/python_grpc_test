@@ -7,9 +7,10 @@ services:
       dockerfile: Dockerfile
       tags:
         - "fedora-runner"
+      args:
+        UID: ${HOST_UID}
+        GID: ${HOST_GID}
     image: fedora-runner
     stdin_open: true  # Keep STDIN open for interactive use
-    # tty: true
-    command: python -m grpc_tools.protoc -I./protos/ --python_out=./gen/ --pyi_out=./gen/ --grpc_python_out=./gen/ ./protos/helloworld.proto
-    volumes:
-      - ./protobuf/gen:/app/gen
+    command: ls -la gen
+
