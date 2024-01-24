@@ -6,12 +6,15 @@ authors = ["nobinkhan <nazrulkhan.dk@gmail.com>"]
 packages = [{include = "scripts"}]
 
 [tool.poetry.scripts]
-server = "scripts.server:main"
+serveGRPC = "scripts.server:grpc_serve"
+serveREST = "scripts.server:rest_serve"
 client = "scripts.client:main"
 
 [tool.poetry.dependencies]
 python = "^3.12"
 grpcio-tools = "^1.60.0"
+fastapi = "^0.109.0"
+granian = "^1.0.0"
 
 
 [build-system]
